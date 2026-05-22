@@ -3,7 +3,7 @@ let words = [];
 
 // Загружаем words.json
 async function loadWords() {
-  const response = await fetch("data/words.json");
+  const response = await fetch("words.json");
   words = await response.json();
 }
 
@@ -74,7 +74,7 @@ function renderResults(results) {
       <div class="example">
         <p><span class="label">Пример:</span> ${item.example}</p>
         <p>
-          <a href="texts/${item.sourceFile}#${item.fragment}">
+          <a href="${item.sourceFile}#${item.fragment}">
             Открыть место в полном тексте
           </a>
         </p>
