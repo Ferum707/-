@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Название вкладки браузера -->
+  <title>Словарь древнерусских слов</title>
+
+  <!-- Подключаем оформление -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Словарь древнерусских слов</h1>
+    <p>Поиск слов по древнерусским памятникам</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Блок поиска -->
+    <section class="search-panel">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Введите слово: вира, смерд, паче, дарья..."
+      >
+
+      <select id="sourceFilter">
+        <option value="all">Все памятники</option>
+        <option value="Русская Правда">Русская Правда</option>
+        <option value="Хождение за три моря">Хождение за три моря</option>
+        <option value="Поучение Владимира Мономаха">Поучение Владимира Мономаха</option>
+        <option value="Повесть временных лет">Повесть временных лет</option>
+      </select>
+
+      <button id="searchButton">Найти</button>
+    </section>
+
+    <!-- Сюда будут выводиться результаты -->
+    <section id="results" class="results">
+      <p class="hint">Введите слово или выберите памятник.</p>
+    </section>
+
+  </main>
+
+  <!-- Подключаем JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

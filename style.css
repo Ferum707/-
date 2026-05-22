@@ -1,0 +1,137 @@
+/* Общие настройки страницы */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5efe5;
+  color: #24170f;
+}
+
+/* Верхняя шапка */
+.header {
+  background: #2f1f14;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Центральный контейнер */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Панель поиска */
+.search-panel {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Поле ввода */
+#searchInput {
+  flex: 1;
+  padding: 14px;
+  font-size: 17px;
+  border: 1px solid #bda98e;
+  border-radius: 8px;
+}
+
+/* Фильтр по памятникам */
+#sourceFilter {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #bda98e;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Кнопка */
+#searchButton {
+  padding: 14px 24px;
+  font-size: 17px;
+  background: #6b3f22;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background: #4d2c17;
+}
+
+/* Карточка слова */
+.card {
+  background: #fffaf2;
+  border: 1px solid #d7c3aa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+/* Слово в карточке */
+.card h2 {
+  margin-top: 0;
+  color: #3a2618;
+}
+
+/* Маленькая подпись категории */
+.badge {
+  display: inline-block;
+  background: #ead8be;
+  color: #4b2c17;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Названия полей */
+.label {
+  font-weight: bold;
+  color: #5a321c;
+}
+
+/* Пример из текста */
+.example {
+  background: #f0e2cf;
+  border-left: 4px solid #6b3f22;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+/* Подсказка */
+.hint {
+  color: #6b6258;
+}
+
+/* Если ничего не найдено */
+.not-found {
+  background: #fff0f0;
+  border: 1px solid #d9a0a0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Страница полного текста */
+.text-page p {
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+mark {
+  background: #ffdf8a;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
