@@ -62,24 +62,30 @@ function renderResults(results) {
     const card = document.createElement("div");
     card.className = "card";
 
-    card.innerHTML = `
-      <span class="badge">${item.category}</span>
+   card.innerHTML = `
+  <span class="badge">${item.category}</span>
 
-      <h2>${item.word}</h2>
+  <h2>${item.word}</h2>
 
-      <p><span class="label">Значение:</span> ${item.meaning}</p>
-      <p><span class="label">Памятник:</span> ${item.source}</p>
-      <p><span class="label">Комментарий:</span> ${item.comment}</p>
+  <p><span class="label">Значение:</span> ${item.meaning}</p>
+  <p><span class="label">Памятник:</span> ${item.source}</p>
+  <p><span class="label">Комментарий:</span> ${item.comment}</p>
+  <p>
+    <span class="label">Словарь-источник:</span>
+    <a href="${item.dictionaryUrl}" target="_blank" rel="noopener noreferrer">
+      ${item.dictionaryName}
+    </a>
+  </p>
 
-      <div class="example">
-        <p><span class="label">Пример:</span> ${item.example}</p>
-        <p>
-          <a href="${item.sourceFile}#${item.fragment}">
-            Открыть место в полном тексте
-          </a>
-        </p>
-      </div>
-    `;
+  <div class="example">
+    <p><span class="label">Пример:</span> ${item.example}</p>
+    <p>
+      <a href="${item.sourceFile}#${item.fragment}">
+        Открыть место в полном тексте
+      </a>
+    </p>
+  </div>
+`;
 
     resultsBlock.appendChild(card);
   });
