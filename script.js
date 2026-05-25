@@ -1,15 +1,43 @@
-// Здесь будет храниться база слов
 let words = [];
 
-// Загружаем words.json
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadWords();
+
+  document.getElementById("searchButton").addEventListener("click", () => {
+    const query = document.getElementById("searchInput").value;
+    const selectedSource = document.getElementById("sourceFilter").value;
+
+    const results = searchWords(query, selectedSource);
+    renderResults(results);
+  });
+
+  document.getElementById("searchInput").addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      document.getElementById("searchButton").click();
+    }
+  });
+
+  document.getElementById("sourceFilter").addEventListener("change", () => {
+    document.getElementById("searchButton").click();
+  });
+});
+
 async function loadWords() {
-  const response = await fetch("words.json");
-  words = await response.json();
+  try {
+    const response = await fetch("words.json", { cache: "no-cache" });
+    words = await response.json();
+  } catch (error) {
+    document.getElementById("results").innerHTML = `
+      <div class="not-found">
+        Ошибка загрузки базы words.json. Проверьте файл и его расположение.
+      </div>
+    `;
+    console.error("Ошибка загрузки words.json:", error);
+  }
 }
 
-// Упрощаем текст для поиска
 function normalizeText(text) {
-  return text
+  return String(text || "")
     .toLowerCase()
     .replaceAll("ё", "е")
     .replaceAll("ъ", "")
@@ -17,7 +45,6 @@ function normalizeText(text) {
     .trim();
 }
 
-// Ищем слова
 function searchWords(query, selectedSource) {
   const normalizedQuery = normalizeText(query);
 
@@ -32,7 +59,9 @@ function searchWords(query, selectedSource) {
       item.category,
       item.source,
       item.example,
-      item.comment
+      item.comment,
+      item.dictionaryName,
+      item.dictionaryUrl
     ];
 
     const matchesQuery =
@@ -43,7 +72,6 @@ function searchWords(query, selectedSource) {
   });
 }
 
-// Показываем результаты
 function renderResults(results) {
   const resultsBlock = document.getElementById("results");
 
@@ -62,55 +90,43 @@ function renderResults(results) {
     const card = document.createElement("div");
     card.className = "card";
 
-   card.innerHTML = `
-  <span class="badge">${item.category}</span>
+    const dictionaryHtml = item.dictionaryUrl
+      ? `
+        <p>
+          <span class="label">Словарь-источник:</span>
+          <a href="${item.dictionaryUrl}" target="_blank" rel="noopener noreferrer">
+            ${item.dictionaryName || item.dictionaryUrl}
+          </a>
+        </p>
+      `
+      : `
+        <p>
+          <span class="label">Словарь-источник:</span>
+          не указан
+        </p>
+      `;
 
-  <h2>${item.word}</h2>
+    card.innerHTML = `
+      <span class="badge">${item.category}</span>
 
-  <p><span class="label">Значение:</span> ${item.meaning}</p>
-  <p><span class="label">Памятник:</span> ${item.source}</p>
-  <p><span class="label">Комментарий:</span> ${item.comment}</p>
-  <p>
-  <span class="label">Словарь-источник:</span>
-  <a href="${item.dictionaryUrl}" target="_blank" rel="noopener noreferrer">
-    ${item.dictionaryUrl}
-  </a>
-</p>
+      <h2>${item.word}</h2>
 
-  <div class="example">
-    <p><span class="label">Пример:</span> ${item.example}</p>
-    <p>
-      <a href="${item.sourceFile}#${item.fragment}">
-        Открыть место в полном тексте
-      </a>
-    </p>
-  </div>
-`;
+      <p><span class="label">Значение:</span> ${item.meaning}</p>
+      <p><span class="label">Памятник:</span> ${item.source}</p>
+      <p><span class="label">Комментарий:</span> ${item.comment}</p>
+
+      ${dictionaryHtml}
+
+      <div class="example">
+        <p><span class="label">Пример:</span> ${item.example}</p>
+        <p>
+          <a href="${item.sourceFile}#${item.fragment}">
+            Открыть место в полном тексте
+          </a>
+        </p>
+      </div>
+    `;
 
     resultsBlock.appendChild(card);
   });
 }
-
-// Обработка кнопки поиска
-document.getElementById("searchButton").addEventListener("click", () => {
-  const query = document.getElementById("searchInput").value;
-  const selectedSource = document.getElementById("sourceFilter").value;
-
-  const results = searchWords(query, selectedSource);
-  renderResults(results);
-});
-
-// Поиск по Enter
-document.getElementById("searchInput").addEventListener("keydown", event => {
-  if (event.key === "Enter") {
-    document.getElementById("searchButton").click();
-  }
-});
-
-// Если поменяли памятник, сразу обновляем результаты
-document.getElementById("sourceFilter").addEventListener("change", () => {
-  document.getElementById("searchButton").click();
-});
-
-// Загружаем базу при открытии сайта
-loadWords();
