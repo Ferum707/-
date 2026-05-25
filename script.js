@@ -71,11 +71,11 @@ function renderResults(results) {
   <p><span class="label">Памятник:</span> ${item.source}</p>
   <p><span class="label">Комментарий:</span> ${item.comment}</p>
   <p>
-    <span class="label">Словарь-источник:</span>
-    <a href="${item.dictionaryUrl}" target="_blank" rel="noopener noreferrer">
-      ${item.dictionaryName}
-    </a>
-  </p>
+  <span class="label">Словарь-источник:</span>
+  <a href="${item.dictionaryUrl}" target="_blank" rel="noopener noreferrer">
+    ${item.dictionaryUrl}
+  </a>
+</p>
 
   <div class="example">
     <p><span class="label">Пример:</span> ${item.example}</p>
