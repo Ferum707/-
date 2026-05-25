@@ -8,7 +8,9 @@
     "sourceFile": "russkaya-pravda.html",
     "fragment": "rp-3",
     "example": "Если кто убьет княжего мужа в разбое, а убийцу не ищут, то виру в 80 гривен платить верви...",
-    "comment": "Термин связан с системой денежных штрафов в древнерусском праве."
+    "comment": "Термин связан с системой денежных штрафов в древнерусском праве.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/meta/vira"
   },
   {
     "word": "вервь",
@@ -19,7 +21,9 @@
     "sourceFile": "russkaya-pravda.html",
     "fragment": "rp-4",
     "example": "Если которая-либо вервь будет платить дикую виру...",
-    "comment": "В Русской Правде вервь выступает как коллектив, связанный круговой ответственностью."
+    "comment": "В Русской Правде вервь выступает как коллектив, связанный круговой ответственностью.",
+    "dictionaryName": "Academic / юридический словарь",
+    "dictionaryUrl": "https://jurisprudence.academic.ru/1000/%D0%B2%D0%B5%D1%80%D0%B2%D1%8C"
   },
   {
     "word": "смерд",
@@ -30,7 +34,9 @@
     "sourceFile": "russkaya-pravda.html",
     "fragment": "rp-16",
     "example": "А за смерда и холопа 5 гривен, а за робу — 6 гривен.",
-    "comment": "Термин важен для понимания социальной структуры Древней Руси."
+    "comment": "Термин важен для понимания социальной структуры Древней Руси.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/meta/smerd"
   },
   {
     "word": "холоп",
@@ -41,7 +47,9 @@
     "sourceFile": "russkaya-pravda.html",
     "fragment": "rp-16",
     "example": "А за смерда и холопа 5 гривен...",
-    "comment": "В Русской Правде холоп рассматривается как зависимое лицо."
+    "comment": "В Русской Правде холоп рассматривается как зависимое лицо.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/meta/kholop"
   },
   {
     "word": "паче",
@@ -52,7 +60,9 @@
     "sourceFile": "pouchenie.html",
     "fragment": "pm-1",
     "example": "Паче же всего гордости не имейте в сердце и в уме...",
-    "comment": "Книжное слово, характерное для поучительной и церковной традиции."
+    "comment": "Книжное слово, характерное для поучительной и церковной традиции.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/meta/pache"
   },
   {
     "word": "ибо",
@@ -63,29 +73,9 @@
     "sourceFile": "pouchenie.html",
     "fragment": "pm-2",
     "example": "Ибо встретили меня послы от братьев моих на Волге...",
-    "comment": "Частотный книжный союз."
-  },
-  {
-    "word": "тава",
-    "normalized": "тава",
-    "meaning": "Индийское судно, корабль.",
-    "category": "Бытовой / торговый термин",
-    "source": "Хождение за три моря",
-    "sourceFile": "khozhdenie.html",
-    "fragment": "hz-1",
-    "example": "А из Ормуза после Пасхи в день Радуницы пошел я в таве с конями за море Индийское.",
-    "comment": "Слово встречается в описании путешествия Афанасия Никитина."
-  },
-  {
-    "word": "дарья",
-    "normalized": "дарья",
-    "meaning": "Море; слово восточного происхождения.",
-    "category": "Географический термин",
-    "source": "Хождение за три моря",
-    "sourceFile": "khozhdenie.html",
-    "fragment": "hz-2",
-    "example": "Первое море — Дербентское, дарья Хвалисская...",
-    "comment": "Используется Никитиным при описании морей."
+    "comment": "Частотный книжный союз.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/poisk?mode=slovari&query=%D0%B8%D0%B1%D0%BE"
   },
   {
     "word": "варяги",
@@ -96,6 +86,8 @@
     "sourceFile": "pvl.html",
     "fragment": "pvl-1",
     "example": "По этому морю сидят варяги...",
-    "comment": "Термин важен для летописного рассказа о происхождении Руси."
+    "comment": "Термин важен для летописного рассказа о происхождении Руси.",
+    "dictionaryName": "Грамота.ру",
+    "dictionaryUrl": "https://gramota.ru/meta/varyagi"
   }
 ]
